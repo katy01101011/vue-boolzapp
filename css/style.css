@@ -7,7 +7,7 @@
     --notifiche-text: #131B20;
     --message-separator: #EAEDEF;
     --hover-message: #F5F6F6;
-    --ions-received_data: #89969F;
+    --icons-received_data: #89969F;
     --send-background: #E0FCD6;
     --send_data: #728072;
     --gradient-top: #408A7E;
@@ -37,6 +37,7 @@ body {
     width: 80vw;
     height: 95vh;
     display: flex;
+    box-shadow: 0px 5px 15px 0px #000000;
 }
 
 /* Contacts */
@@ -84,6 +85,11 @@ body {
     display: inline-block;
 }
 
+#icons span:hover {
+    color: var(--icons-received_data);
+    transition: .3s;
+}
+
 /* Contacts notifications */
 
 #notifications {
@@ -126,9 +132,49 @@ body {
     font-size: .5rem;
 }
 
+/* Search bar */
+
 #contacts-container nav {
     height: 40px;
-    background-color: brown;
+    background-color: var(--gradient-bottom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-container {
+    background-color: var(--header-input-activemsg);
+    width: 93%;
+    height: 73%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#input-container span {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    font-size: .8rem;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+    color: var(--icons);
+}
+
+#input-container span:hover {
+    color: var(--icons-received_data);
+    transition: .3s;
+}
+
+input {
+    width: 85%;
+    height: 100%;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+background-color: transparent;
 }
 
 #contacts {
