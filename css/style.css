@@ -2,6 +2,7 @@
 :root {
     --header-input-activemsg: #F0F2F5;
     --header-separator: #D2D7DB;
+    --icons: #57646E;
     --notifiche: #70BBE6;
     --message-separator: #EAEDEF;
     --hover-message: #F5F6F6;
@@ -44,18 +45,42 @@ body {
 }
 
 #contacts-container header {
+    color: var(--icons);
     height: 50px;
-    background-color: red;
+    background-color: var(--header-input-activemsg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem;
 }
 
-/* User */
-
 #user {
+    font-size: .7rem;
+    display: flex;
+    align-items: center;
+}
 
+.user-avatar {
+    width: 37px;
+    height: 37px;
+    border-radius: 20px;
+    background-image: url(../img/avatar_io.jpg);
+    background-size: cover;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+#icons {
+    margin: .5rem;
+}
+
+#icons span {
+    margin: .2rem;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    display: inline-block;
 }
 
 #notifications {
@@ -88,7 +113,6 @@ body {
 #messages-container {
     width: 65%;
     height: 100%;
-    border: 1px solid black;
 }
 
 #messages-container header {
