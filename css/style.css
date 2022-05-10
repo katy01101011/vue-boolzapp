@@ -4,13 +4,15 @@
     --header-separator: #D2D7DB;
     --icons: #57646E;
     --notifiche: #70BBE6;
+    --notifiche-text: #131B20;
     --message-separator: #EAEDEF;
     --hover-message: #F5F6F6;
     --ions-received_data: #89969F;
     --send-background: #E0FCD6;
     --send_data: #728072;
-    --gradient-top: #6CC8A7;
-    --gradient-bottom: #F8F8F8;
+    --gradient-top: #408A7E;
+    --gradient-bottom: #FFFFFF;
+    --padding-left: .7rem;
 }
 
 /* Reset */
@@ -51,7 +53,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: var(--padding-left);
+    padding-right: .5rem;
 }
+
+/* Contacts header */
 
 #user {
     font-size: .7rem;
@@ -65,12 +71,7 @@ body {
     border-radius: 20px;
     background-image: url(../img/avatar_io.jpg);
     background-size: cover;
-    margin: .5rem;
     cursor: pointer;
-}
-
-#icons {
-    margin: .5rem;
 }
 
 #icons span {
@@ -83,12 +84,46 @@ body {
     display: inline-block;
 }
 
+/* Contacts notifications */
+
 #notifications {
+    color: var(--notifiche-text);
+    font-size: .9rem;
     height: 60px;
-    background-color: fuchsia;
-    padding: 1rem;
+    background-color: var(--notifiche);
     display: flex;
     align-items: center;
+    padding-left: var(--padding-left);
+    cursor: pointer;
+}
+
+#bell {
+    color: var(--notifiche);
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#bell-text {
+    padding-left: var(--padding-left);
+}
+
+#bell-text a {
+    color: inherit;
+    font-size: .7rem;
+    text-decoration: none;
+}
+
+#bell-text a:hover {
+    text-decoration: underline;
+}
+
+#bell-text i {
+    font-size: .5rem;
 }
 
 #contacts-container nav {
