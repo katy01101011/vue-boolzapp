@@ -14,6 +14,7 @@
     --gradient-bottom: #FFFFFF;
     --text-preview: #697680;
     --padding-left: .7rem;
+    --check: #70BBE6;
 }
 
 /* Reset */
@@ -278,6 +279,15 @@ body {
     justify-content: space-between;
 }
 
+#text-time {
+
+}
+
+#text-time>p {
+    align-self: flex-end;
+
+}
+
 /* Chat */
 
 main {
@@ -337,6 +347,11 @@ main {
     align-items: center;
 }
 
+.messages-container p {
+    font-size: .7rem;
+    color: var(--send_data);
+}
+
 .received,
 .sent {
     display: inline-block;
@@ -345,6 +360,9 @@ main {
     font-size: .85rem;
     box-shadow: 0px 1px 1.7px 1px rgba(0, 0, 0, .2);
     max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .received {
@@ -354,8 +372,7 @@ main {
 
 .sent {
     background-color: var(--send-background);
-    border-radius: 10px 00px 10px 10px;
-    /* margin-left: auto; */
+    border-radius: 10px 0 10px 10px;
 }
 
 .div-sent::before,
@@ -386,6 +403,17 @@ main {
 .div-sent:hover::before,
 .div-received:hover::after {
     display: inline-block;
+}
+
+.active {
+    background-color: red;
+}
+
+.sent p::after {
+    content: '\2714';
+    font-size: .9rem;
+    margin-left: .2rem;
+    color: var(--check);
 }
 
 /* Type a message */

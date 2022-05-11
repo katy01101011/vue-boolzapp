@@ -70,7 +70,7 @@
                 <!-- Contacts -->
                 <div id="contacts">
                     <!-- Contact -->
-                    <div v-for="(contact, index) in myContacts" class="contact">
+                    <div v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" v-if>
                         <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
 
                         <div class="contact-content">
@@ -96,10 +96,10 @@
                 <!-- Message header -->
                 <header>
                     <div id="chat-container">
-                        <img class="chat-avatar" src="img/avatar_1.jpg" alt="">
+                        <img class="chat-avatar" :src=" 'img/avatar' + myContacts[currentContact].avatar + '.jpg' " alt="">
                         <div class="chat-details">
                             <div class="chat-name">
-                                Vitantonio
+                                {{ myContacts[currentContact].name }}
                             </div>
                             <div class="chat-time">
                                 Ultimo accesso oggi alle 17:11
@@ -123,7 +123,9 @@
                         <div v-for="element in myContacts[0].messages" :class="'div-' + element.status">
                             <span :class="element.status">
                                 {{ element.message }}
+                                <p>13:41</p>
                             </span>
+  
                         </div>
                     </div>
                 </main>

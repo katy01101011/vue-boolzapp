@@ -164,10 +164,17 @@ const app = new Vue(
                         }
                     ],
                 }
-            ]
+            ],
+            currentContact: 0,
+
         },
         methods: {
-
+            activeContact(index, currentContact) {
+                currentContact = index;
+                console.log(index);
+                console.log(currentContact);
+                return currentContact
+            }
         }
     }
 )
