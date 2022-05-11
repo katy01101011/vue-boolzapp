@@ -141,7 +141,7 @@
                         </span>
                     </div>
                     <div class="new-message-input">
-                        <input type="text" name="new-message" id="new-message" placeholder="    Scrivi un messaggio">
+                        <input v-model="newTextMessage" @keyup.enter="sendNewMessage()" type="text" name="new-message" id="new-message" placeholder="    Scrivi un messaggio">
                     </div>
                     <span>
                         <i class="fas fa-microphone"></i>

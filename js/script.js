@@ -166,6 +166,7 @@ const app = new Vue(
                 }
             ],
             currentContact: 0,
+            newTextMessage: '',
 
         },
         methods: {
@@ -177,6 +178,26 @@ const app = new Vue(
 
                 setTimeout(function() {
                     document.querySelector('.chat-time').style.display = "none";
+                }, 2000);
+            },
+
+            sendNewMessage: function() {
+                const newMsg = {
+                    date: '10/01/2020 15:51:00',
+                    message: this.newTextMessage,
+                    status: 'sent'
+                }
+                this.myContacts[this.currentContact].messages.push(newMsg);
+
+                this.newTextMessage = '';
+                
+                setTimeout(() => {
+                    const answer = {
+                        date: '10/01/2020 15:51:00',
+                        message: 'Ok',
+                        status: 'received'
+                    }
+                    this.myContacts[this.currentContact].messages.push(answer)
                 }, 2000);
             }
         }
