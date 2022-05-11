@@ -209,6 +209,7 @@ body {
     border-bottom: 1px solid var(--message-separator);
     font-size: .9rem;
     line-height: 1.3rem;
+    cursor: pointer;
 }
 
 .contact-content {
@@ -355,7 +356,7 @@ main {
 .received,
 .sent {
     display: inline-block;
-    padding: .5rem;
+    padding: .3rem;
     margin-bottom: .7rem;
     font-size: .85rem;
     box-shadow: 0px 1px 1.7px 1px rgba(0, 0, 0, .2);
@@ -363,16 +364,24 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    min-width: 150px;
+
 }
 
 .received {
     background-color: white;
     border-radius: 0 10px 10px 10px;
+    align-self: flex-start;
 }
 
 .sent {
     background-color: var(--send-background);
     border-radius: 10px 0 10px 10px;
+}
+
+.received {
+    display: flex;
+    justify-content: center;
 }
 
 .div-sent::before,
@@ -406,7 +415,12 @@ main {
 }
 
 .active {
-    background-color: red;
+    background-color: var(--header-input-activemsg);
+}
+
+.active:hover {
+    background-color: var(--header-input-activemsg);
+
 }
 
 .sent p::after {

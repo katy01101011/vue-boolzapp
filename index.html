@@ -70,7 +70,7 @@
                 <!-- Contacts -->
                 <div id="contacts">
                     <!-- Contact -->
-                    <div v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" v-if>
+                    <div id="contact-active" v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" :class=" index === currentContact ? 'active' : '' ">
                         <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
 
                         <div class="contact-content">
@@ -120,12 +120,11 @@
                 <!-- Messages -->
                 <main id="messages">
                     <div class="messages-container">
-                        <div v-for="element in myContacts[0].messages" :class="'div-' + element.status">
+                        <div v-for="element in myContacts[currentContact].messages" :class="'div-' + element.status">
                             <span :class="element.status">
                                 {{ element.message }}
                                 <p>13:41</p>
                             </span>
-  
                         </div>
                     </div>
                 </main>

@@ -169,11 +169,15 @@ const app = new Vue(
 
         },
         methods: {
-            activeContact(index, currentContact) {
-                currentContact = index;
-                console.log(index);
-                console.log(currentContact);
-                return currentContact
+            activeContact(index) {
+                this.currentContact = index;
+                const activeCont = this.myContacts[index];
+                // console.log(this.myContacts[index].messages[messages.length - 1]);
+                document.querySelector('.chat-time').style.display = "inline-block";
+
+                setTimeout(function() {
+                    document.querySelector('.chat-time').style.display = "none";
+                }, 2000);
             }
         }
     }
@@ -181,4 +185,4 @@ const app = new Vue(
 
 const chatTimeNone = setTimeout(function() {
     document.querySelector('.chat-time').style.display = "none";
-}, 3000);
+}, 2000);
