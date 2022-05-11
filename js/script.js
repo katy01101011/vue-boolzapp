@@ -15,7 +15,7 @@ const app = new Vue(
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
+                            message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus expedita numquam dolor quaerat error et rem tenetur libero accusantium ut deleniti magni optio inventore, iusto dicta dolorem possimus eaque veritatis.',
                             status: 'sent'
                         },
                         {

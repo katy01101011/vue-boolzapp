@@ -329,19 +329,22 @@ main {
 .messages-container {
     width: 82%;
     margin: auto;
+    margin-top: 1rem;
 }
 
-.messages-container div {
+.messages-container>div {
     display: flex;
+    align-items: center;
 }
 
 .received,
 .sent {
     display: inline-block;
     padding: .5rem;
-    margin-top: .7rem;
+    margin-bottom: .7rem;
     font-size: .85rem;
     box-shadow: 0px 1px 1.7px 1px rgba(0, 0, 0, .2);
+    max-width: 75%;
 }
 
 .received {
@@ -352,7 +355,37 @@ main {
 .sent {
     background-color: var(--send-background);
     border-radius: 10px 00px 10px 10px;
-    margin-left: auto;
+    /* margin-left: auto; */
+}
+
+.div-sent::before,
+.div-received::after {
+    content: '\263A';
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, .2);
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    border-radius: 50%;
+    justify-self: flex-end;
+    margin: .4rem;
+    align-self: center;
+    position: relative;
+    bottom: 4px;
+    display: none;
+    cursor: pointer;
+}
+
+.div-sent {
+    justify-content: flex-end;
+}
+
+.div-sent:hover::before,
+.div-received:hover::after {
+    display: inline-block;
 }
 
 /* Type a message */
