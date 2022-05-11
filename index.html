@@ -23,7 +23,7 @@
     
     <div id="app">
         <div id="app-container">
-            <!-- Contacts -->
+            <!-- Contacts container -->
             <div id="contacts-container">
                 <!-- Contacts header -->
                 <header>
@@ -70,60 +70,237 @@
                 <!-- Contacts -->
                 <div id="contacts">
                     <!-- Contact -->
-                    <div class="contact">
-                        <img src="img/avatar_1.jpg" alt="">
+                    <div v-for="(contact, index) in myContacts" class="contact">
+                        <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
 
                         <div class="contact-content">
-
+                            <div class="name-time">
+                                <span>{{ contact.name }}</span>
+                                <span class="time">18:32</span>
+                            </div>
+                            <div class="text-preview">
+                                <span>Ciao</span>
+                                <span><i class="fas fa-chevron-down"></i></span>
+                            </div>
                         </div>
                     </div>
                     <!-- /Contact -->
-
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
-                    <div class="contact">
-                        
-                    </div>
                 </div>
                 <!-- /Contacts -->
-
             </div>
-            <!-- /Contacts -->
+            <!-- /Contacts container -->
 
             <!-- Messages -->
             <div id="messages-container">
 
                 <!-- Message header -->
                 <header>
+                    <div id="chat-container">
+                        <img class="chat-avatar" src="img/avatar_1.jpg" alt="">
+                        <div class="chat-details">
+                            <div class="chat-name">
+                                Vitantonio
+                            </div>
+                            <div class="chat-time">
+                                Ultimo accesso oggi alle 17:11
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-icons">
+                        <span>
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                    </div>
                 </header>
                 <!-- /Message header -->
 
                 <!-- Messages -->
                 <main id="messages">
+                    <div class="messages-container">
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+                        <div>
+                            <span class="received">
+                                Ciao, come stai?
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sent clearfix">
+                                Bene, grazie :D
+                            </span>
+                        </div>
+
+                    </div>
                 </main>
                 <!-- /Messages -->
 
                 <!-- Type a message -->
                 <div id="type-text">
+                    <div class="type-icons">
+                        <span>
+                            <i class="far fa-smile"></i>
+                        </span>
+                        <span>
+                            <i class="fas fa-paperclip"></i>
+                        </span>
+                    </div>
+                    <div class="new-message-input">
+                        <input type="text" name="new-message" id="new-message" placeholder="    Scrivi un messaggio">
+                    </div>
+                    <span>
+                        <i class="fas fa-microphone"></i>
+                    </span>
                 </div>
                 <!-- Type a message -->
 
