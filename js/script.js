@@ -1,3 +1,6 @@
+console.log(window);
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 const app = new Vue(
     {
         el: '#app',
@@ -167,6 +170,7 @@ const app = new Vue(
             ],
             currentContact: 0,
             newTextMessage: '',
+            searchContact: '',
 
         },
         methods: {
@@ -183,7 +187,7 @@ const app = new Vue(
 
             sendNewMessage: function() {
                 const newMsg = {
-                    date: '10/01/2020 15:51:00',
+                    date: this.getCurrentTime(),
                     message: this.newTextMessage,
                     status: 'sent'
                 }
@@ -193,12 +197,21 @@ const app = new Vue(
                 
                 setTimeout(() => {
                     const answer = {
-                        date: '10/01/2020 15:51:00',
+                        date: this.getCurrentTime(),
                         message: 'Ok',
                         status: 'received'
                     }
-                    this.myContacts[this.currentContact].messages.push(answer)
+                    this.myContacts[this.currentContact].messages.push(answer);
                 }, 2000);
+            },
+
+            getCurrentTime() {
+                return dayjs(new Date()).format('DD-MM-YYYY HH:mm:ss')
+            },
+
+            getTheTime(date) {
+                date = dayjs(date, 'DD-MM-YYYY HH:mm:ss');
+                return date.format('HH:mm')
             }
         }
     }
@@ -207,3 +220,6 @@ const app = new Vue(
 const chatTimeNone = setTimeout(function() {
     document.querySelector('.chat-time').style.display = "none";
 }, 2000);
+
+const nowDate = dayjs('10/01/2020 15:30:55', 'DD-MM-YYYY HH:mm:ss');
+console.log(nowDate);

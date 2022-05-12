@@ -62,7 +62,7 @@
                         <span>
                             <i class="fas fa-search"></i>
                         </span>
-                        <input type="text" name="search" id="search" placeholder=" Cerca o inizia una nuova chat">
+                        <input v-model="searchContact" type="text" name="search" id="search" placeholder=" Cerca o inizia una nuova chat">
                     </div>
                 </nav>
                 <!-- /Search -->
@@ -122,8 +122,10 @@
                     <div class="messages-container">
                         <div v-for="element in myContacts[currentContact].messages" :class="'div-' + element.status">
                             <span :class="element.status">
-                                {{ element.message }}
-                                <p>13:41</p>
+                                <span id="newChatMessage">
+                                    {{ element.message }}
+                                </span>
+                                <p>{{ getTheTime(element.date) }}</p>
                             </span>
                         </div>
                     </div>
@@ -141,7 +143,7 @@
                         </span>
                     </div>
                     <div class="new-message-input">
-                        <input v-model="newTextMessage" @keyup.enter="sendNewMessage()" type="text" name="new-message" id="new-message" placeholder="    Scrivi un messaggio">
+                        <input v-model="newTextMessage" @keyup.enter="sendNewMessage()" type="text" name="new-message" id="new-message" placeholder="Scrivi un messaggio">
                     </div>
                     <span>
                         <i class="fas fa-microphone"></i>
@@ -155,6 +157,12 @@
         </div>
     </div>
 
+    <!-- DayJS Script -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
+
+    <!-- MyScript
+     -->
     <script src="js/script.js"></script>
 </body>
 </html>
