@@ -171,7 +171,6 @@ const app = new Vue(
             currentContact: 0,
             newTextMessage: '',
             searchContact: '',
-
         },
         methods: {
             activeContact(index) {
@@ -212,6 +211,41 @@ const app = new Vue(
             getTheTime(date) {
                 date = dayjs(date, 'DD-MM-YYYY HH:mm:ss');
                 return date.format('HH:mm')
+            },
+
+            searchInContact() {
+                this.myContacts.forEach( element => {
+                    const lowerCaseContact = element.name.toLowerCase();
+                    const lowerCaseSearchContact = this.searchContact.toLowerCase();
+
+                    if (lowerCaseContact.includes(lowerCaseSearchContact)) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    };
+
+                    if (element.visible === false) {
+                        console.log('scompare')
+                    } else {
+                        console.log('rimane');
+                    };
+                })
+
+
+                // if ( this.element.visible === false ) {
+                //     document.getElementById('contact-active').classList.add('hide')
+                // }
+
+                
+            },
+            cutMessage(message) {
+                const cuttedMessage = message.substr(0, 27) + '...';
+                if (message.length > 25) {
+                    message = cuttedMessage
+                } else {
+                    message
+                }
+                return message
             }
         }
     }
@@ -222,4 +256,3 @@ const chatTimeNone = setTimeout(function() {
 }, 2000);
 
 const nowDate = dayjs('10/01/2020 15:30:55', 'DD-MM-YYYY HH:mm:ss');
-console.log(nowDate);

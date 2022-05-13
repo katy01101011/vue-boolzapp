@@ -62,7 +62,7 @@
                         <span>
                             <i class="fas fa-search"></i>
                         </span>
-                        <input v-model="searchContact" type="text" name="search" id="search" placeholder=" Cerca o inizia una nuova chat">
+                        <input v-model="searchContact" type="text" name="search" id="search" placeholder=" Cerca o inizia una nuova chat" @keyup="searchInContact">
                     </div>
                 </nav>
                 <!-- /Search -->
@@ -70,16 +70,16 @@
                 <!-- Contacts -->
                 <div id="contacts">
                     <!-- Contact -->
-                    <div id="contact-active" v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" :class=" index === currentContact ? 'active' : '' ">
+                    <div id="contact-active" v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" :class="[ index === currentContact ? 'active' : '' ]" v-for="">
                         <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
 
                         <div class="contact-content">
                             <div class="name-time">
                                 <span>{{ contact.name }}</span>
-                                <span class="time">18:32</span>
+                                <span class="time"> {{ getTheTime(contact.messages[contact.messages.length - 1].date) }} </span>
                             </div>
                             <div class="text-preview">
-                                <span>Ciao</span>
+                                <span>{{ cutMessage(contact.messages[contact.messages.length - 1].message) }}</span>
                                 <span><i class="fas fa-chevron-down"></i></span>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                 <!-- Message header -->
                 <header>
                     <div id="chat-container">
-                        <img class="chat-avatar" :src=" 'img/avatar' + myContacts[currentContact].avatar + '.jpg' " alt="">
+                        <img class="chat-avatar" :src=" 'img/avatar' + myContacts[currentContact].avatar + '.jpg' " alt="myContacts[currentContact].name">
                         <div class="chat-details">
                             <div class="chat-name">
                                 {{ myContacts[currentContact].name }}

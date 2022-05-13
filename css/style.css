@@ -193,6 +193,10 @@ body {
     background-color: transparent;
 }
 
+#search {
+    padding-left: 1rem;
+}
+
 /* Contacts */
 
 #contacts {
@@ -278,10 +282,6 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between;
-}
-
-#text-time {
-
 }
 
 #text-time>p {
@@ -482,4 +482,8 @@ main {
 #type-text>span  {
     margin-left: var(--padding-left);
     margin-right: var(--padding-left);
+}
+
+.hide {
+    display: none;
 }
