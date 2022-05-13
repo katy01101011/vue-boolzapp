@@ -227,7 +227,7 @@ const app = new Vue(
             },
             cutMessage(message) {
                 const cuttedMessage = message.substr(0, 27) + '...';
-                if (message.length > 25) {
+                if (message.length > 27) {
                     message = cuttedMessage
                 } else {
                     message

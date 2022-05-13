@@ -102,7 +102,7 @@
                                 {{ myContacts[currentContact].name }}
                             </div>
                             <div class="chat-time">
-                                Ultimo accesso oggi alle 17:11
+                                Ultimo accesso oggi alle {{ getTheTime(myContacts[currentContact].messages[myContacts[currentContact].messages.length - 1].date) }}
                             </div>
                         </div>
                     </div>
