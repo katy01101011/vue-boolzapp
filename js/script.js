@@ -225,18 +225,12 @@ const app = new Vue(
                     };
 
                     if (element.visible === false) {
-                        console.log('scompare')
+                        console.log('Rimane');
                     } else {
-                        console.log('rimane');
+                        console.log('Scompare');
+                        // document.getElementById('contactToCheck').classList.add('hide')
                     };
-                })
-
-
-                // if ( this.element.visible === false ) {
-                //     document.getElementById('contact-active').classList.add('hide')
-                // }
-
-                
+                })                
             },
             cutMessage(message) {
                 const cuttedMessage = message.substr(0, 27) + '...';
