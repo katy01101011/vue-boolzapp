@@ -223,13 +223,6 @@ const app = new Vue(
                     } else {
                         element.visible = false;
                     };
-
-                    if (element.visible === false) {
-                        console.log('Rimane');
-                    } else {
-                        console.log('Scompare');
-                        // document.getElementById('contactToCheck').classList.add('hide')
-                    };
                 })                
             },
             cutMessage(message) {

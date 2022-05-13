@@ -70,7 +70,7 @@
                 <!-- Contacts -->
                 <div id="contacts">
                     <!-- Contact -->
-                    <div id="contact-active contactToCheck" v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" :class="[ index === currentContact ? 'active' : '' ]" v-for="">
+                    <div id="contact-active contactToCheck" v-for="(contact, index) in myContacts" class="contact" @click="activeContact(index)" :class="[ (index === currentContact ? 'active' : ''), (contact.visible === false ? 'hide' : '') ]" v-for="">
                         <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
 
                         <div class="contact-content">
